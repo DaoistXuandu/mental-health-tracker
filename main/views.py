@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect 
 from django.http import HttpResponse
 from django.core import serializers
 from main.forms import MoodEntryForm
@@ -10,6 +10,30 @@ from django.contrib.auth.decorators import login_required
 import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+
+
+def delete_mood(request, id):
+    # Get mood berdasarkan id
+    mood = MoodEntry.objects.get(pk = id)
+    # Hapus mood
+    mood.delete()
+    # Kembali ke halaman awal
+    return HttpResponseRedirect(reverse('main:show_main'))
+
+def edit_mood(request, id):
+    # Get mood entry berdasarkan id
+    mood = MoodEntry.objects.get(pk = id)
+
+    # Set mood entry sebagai instance dari form
+    form = MoodEntryForm(request.POST or None, instance=mood)
+
+    if form.is_valid() and request.method == "POST":
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_mood.html", context)
 
 def logout_user(request):
     logout(request)
