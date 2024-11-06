@@ -137,9 +137,8 @@ else:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = ["http://localhost",
                         "http://127.0.0.1",
-                        "http://raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id/",
-                        "http://raihan-akbar-mentalhealthtracker3.pbp.cs.ui.ac.id/", 
-                        "https://raihan-akbar-mentalhealthtracker3.pbp.cs.ui.ac.id/"
+                        "https://raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id/",
+                        "http://raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id/"
                         ]
 
 
