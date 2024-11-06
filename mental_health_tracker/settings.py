@@ -28,8 +28,13 @@ SECRET_KEY = 'django-insecure-lab5r!23nz!sl*-rdyo0&s_#ha%-jyqwq_ocy40$9!c)d#f*os
 PRODUCTION = os.getenv("PRODUCTION", False)
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", 
-"raihan-akbar-mentalhealthtracker3.pbp.cs.ui.ac.id"]
+ALLOWED_HOSTS = [
+    "localhost", 
+    "127.0.0.1", 
+    "raihan-akbar-mentalhealthtracker3.pbp.cs.ui.ac.id",
+    "https://raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id/",
+    "http://raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id/"
+]
 
 
 # Application definition
@@ -138,7 +143,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = ["http://localhost",
                         "http://127.0.0.1",
                         "https://raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id/",
-                        "http://raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id/"
+                        "http://raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id/",
                         ]
 
 
