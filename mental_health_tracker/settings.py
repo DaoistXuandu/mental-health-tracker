@@ -32,8 +32,7 @@ ALLOWED_HOSTS = [
     "localhost", 
     "127.0.0.1", 
     "raihan-akbar-mentalhealthtracker3.pbp.cs.ui.ac.id",
-    "https://raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id/",
-    "http://raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id/"
+    "raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id"
 ]
 
 
