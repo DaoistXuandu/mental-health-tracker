@@ -28,12 +28,16 @@ SECRET_KEY = 'django-insecure-lab5r!23nz!sl*-rdyo0&s_#ha%-jyqwq_ocy40$9!c)d#f*os
 PRODUCTION = os.getenv("PRODUCTION", False)
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "localhost", 
-    "127.0.0.1", 
-    "raihan-akbar-mentalhealthtracker3.pbp.cs.ui.ac.id",
-    "raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id"
-]
+# ALLOWED_HOSTS = [
+#     "localhost", 
+#     "127.0.0.1", 
+#     "raihan-akbar-mentalhealthtracker3.pbp.cs.ui.ac.id",
+#     "raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id",
+#     "10.0.2.2"
+# ]
+
+ALLOWED_HOSTS = ["*"]
+
 
 
 # Application definition
@@ -45,7 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'main',
+    'corsheaders',
+    'authentication'
 ]
 
 MIDDLEWARE = [
@@ -57,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'mental_health_tracker.urls'
@@ -145,4 +152,9 @@ CSRF_TRUSTED_ORIGINS = ["http://localhost",
                         "http://raihan-akbar-mentalhealthtracker.pbp.cs.ui.ac.id/",
                         ]
 
-
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SAMESITE = 'None'
